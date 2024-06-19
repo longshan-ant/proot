@@ -55,6 +55,11 @@
 #endif
 
 #if defined(ARCH_ARM64)
+struct user_fpsimd_struct {
+       __uint128_t vregs[32];
+       unsigned int fpsr;
+       unsigned int fpcr;
+};
 #define user_fpregs_struct user_fpsimd_struct
 #endif
 
